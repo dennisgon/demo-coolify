@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Demo Coolify</title>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+</head>
+<body class="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-6">
+  <main class="max-w-xl w-full text-center space-y-6">
+    <span class="inline-block rounded-full bg-violet-500/15 px-3 py-1 text-sm text-violet-300">Deployed with Coolify</span>
+    <h1 class="text-4xl font-bold">Halo dari Demo Coolify 🚀</h1>
+    <p class="text-slate-400">Website sederhana ini di-build oleh GitHub Actions dan di-deploy otomatis ke Coolify setiap ada push ke branch <code class="text-violet-300">main</code>.</p>
+    <dl class="grid grid-cols-2 gap-4 text-left">
+      <div class="rounded-xl bg-slate-900 p-4">
+        <dt class="text-xs uppercase text-slate-500">Versi</dt>
+        <dd class="font-mono text-sm break-all">__VERSION__</dd>
+      </div>
+      <div class="rounded-xl bg-slate-900 p-4">
+        <dt class="text-xs uppercase text-slate-500">Build time</dt>
+        <dd class="font-mono text-sm">__BUILD_TIME__</dd>
+      </div>
+    </dl>
+  </main>
+</body>
+</html>
