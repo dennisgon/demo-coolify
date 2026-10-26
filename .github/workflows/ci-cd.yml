@@ -71,5 +71,11 @@ jobs:
     steps:
       - name: Trigger deploy Coolify
         run: |
-          curl -fsS --request GET "${{ secrets.COOLIFY_WEBHOOK }}" \
-            --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+          STATUS=$(curl -sS -o response.txt -w "%{http_code}" --request GET "${{ secrets.COOLIFY_WEBHOOK }}" \
+            --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}")
+          cat response.txt
+          echo
+          if [ "$STATUS" -lt 200 ] || [ "$STATUS" -ge 300 ]; then
+            echo "::error::Coolify deploy gagal (HTTP $STATUS). Pastikan COOLIFY_WEBHOOK pakai https://"
+            exit 1
+          fi
